@@ -1,9 +1,9 @@
--- EXAMPLE 
+-- EXAMPLE
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 -- if you just want default config for the servers then put them in a table
 local servers = {
 	-- web stuff
@@ -28,11 +28,11 @@ local servers = {
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
+	lspconfig[lsp].setup({
+		on_attach = on_attach,
+		on_init = on_init,
+		capabilities = capabilities,
+	})
 end
 
 -- Typescript language server
@@ -65,7 +65,8 @@ lspconfig.volar.setup({
 	filetypes = { "vue" },
 	init_options = {
 		typescript = {
-			tsdk = "/home/tanx/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib",
+			tsdk = os.getenv("HOME")
+				.. "/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib",
 			-- Alternative location if installed as root:
 			-- tsdk = '/usr/local/lib/node_modules/typescript/lib'
 		},

@@ -5,25 +5,32 @@
 local M = {}
 
 -- Path to overriding theme and highlights files
-local highlights = require "highlights"
+local highlights = require("highlights")
+local theme = require("theme")
 
 M.ui = {
-  theme = "rosepine",
-  theme_toggle = { "rosepine", "one_light" },
+	changed_themes = {
+		nord = {
+			base_30 = theme.base_30,
+			base_16 = theme.base_16,
+		},
+	},
+	theme = "nord",
+	theme_toggle = { "nord", "one_light" },
 
-  hl_override = highlights.override,
-  hl_add = highlights.add,
+	hl_override = highlights.override,
+	hl_add = highlights.add,
 
-  nvdash = require "configs.nvdash",
+	nvdash = require("configs.nvdash"),
 
-  statusline = {
-    theme = "minimal",
-  },
+	statusline = {
+		theme = "minimal",
+	},
 }
 
 M.plugins = "plugins"
 
 -- check core.mappings for table structure
-M.mappings = require "mappings"
+M.mappings = require("mappings")
 
 return M
