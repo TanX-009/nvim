@@ -9,8 +9,8 @@ M.base_30 = {
 	one_bg = colors.surfaceContainer,
 	one_bg2 = colors.surfaceContainerHigh,
 	one_bg3 = colors.surfaceContainerHighest,
-	grey = colors.surfaceBright,
-	grey_fg = colors.surfaceVariant,
+	grey = colors.primary,
+	grey_fg = colors.tertiaryContainer,
 	grey_fg2 = colors.outline,
 	light_grey = colors.onSurfaceVariant,
 	red = colors.red,
@@ -33,6 +33,7 @@ M.base_30 = {
 	pmenu_bg = colors.primary,
 	folder_bg = colors.secondary,
 }
+-- test
 
 M.base_16 = {
 	base00 = colors.term0,
