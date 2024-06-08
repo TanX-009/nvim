@@ -1,5 +1,5 @@
 local M = {}
-local colors = dofile(os.getenv("HOME") .. "/.colors/lua/colors.lua")
+local colors = dofile(os.getenv("HOME") .. "/.colors/generated/lua/colors.lua")
 
 M.base_30 = {
 	white = colors.onSurface,
