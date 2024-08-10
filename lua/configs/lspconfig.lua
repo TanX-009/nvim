@@ -14,7 +14,7 @@ local servers = {
 	"html",
 
 	"cssls",
-	"tailwindcss",
+	-- "tailwindcss",
 
 	-- c/cpp stuff
 	"clangd",
