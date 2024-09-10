@@ -1,154 +1,159 @@
-local overrides = require "configs.overrides"
+local overrides = require("configs.overrides")
 
 return {
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("nvchad.configs.lspconfig").defaults()
-      require "configs.lspconfig"
-    end,
-  },
+	-- These are some examples, uncomment them if you want to see them work!
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("nvchad.configs.lspconfig").defaults()
+			require("configs.lspconfig")
+		end,
+	},
 
-  -- override plugin configs
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
-  },
+	-- override plugin configs
+	{
+		"williamboman/mason.nvim",
+		opts = overrides.mason,
+	},
 
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = overrides.blankline,
-  },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		opts = overrides.blankline,
+	},
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = overrides.treesitter,
+	},
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
+	{
+		"nvim-tree/nvim-tree.lua",
+		opts = overrides.nvimtree,
+	},
 
-  {
-    "NvChad/nvim-colorizer.lua",
-    opts = overrides.colorizer,
-  },
+	{
+		"NvChad/nvim-colorizer.lua",
+		opts = overrides.colorizer,
+	},
 
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = { { "nvim-treesitter/nvim-treesitter" } },
-  },
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		dependencies = { { "nvim-treesitter/nvim-treesitter" } },
+	},
 
-  -- formating
-  {
-    "stevearc/conform.nvim",
-    event = "BufWritePre",
-    config = function()
-      require "configs.conform"
-    end,
-  },
+	-- formating
+	{
+		"stevearc/conform.nvim",
+		event = "BufWritePre",
+		config = function()
+			require("configs.conform")
+		end,
+	},
 
-  --linting
-  {
-    "mfussenegger/nvim-lint",
-    event = "InsertEnter",
-    config = function()
-      require "configs.lint"
-    end,
-    enabled = false,
-  },
+	--linting
+	{
+		"mfussenegger/nvim-lint",
+		event = "InsertEnter",
+		config = function()
+			require("configs.lint")
+		end,
+		enabled = false,
+	},
 
-  -- github copilot
-  {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    opts = overrides.copilot,
-  },
+	-- github copilot
+	{
+		"zbirenbaum/copilot.lua",
+		event = "InsertEnter",
+		opts = overrides.copilot,
+	},
 
-  -- copilot integration for nvim-cmp and copilot-cmp
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
-    opts = overrides.nvimcmp,
-  },
+	-- copilot integration for nvim-cmp and copilot-cmp
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			{
+				"zbirenbaum/copilot-cmp",
+				config = function()
+					require("copilot_cmp").setup()
+				end,
+			},
+		},
+		opts = overrides.nvimcmp,
+	},
 
-  {
-    "kylechui/nvim-surround",
-    event = "VeryLazy",
-    lazy = true,
-    config = function()
-      require("nvim-surround").setup {}
-    end,
-  },
+	{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 
-  -- project wide search and replace
-  {
-    "nvim-pack/nvim-spectre",
-    cmd = "Spectre",
-    opts = { open_cmd = "noswapfile vnew" },
-  },
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+		lazy = true,
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	},
 
-  -- colors
-  {
-    "uga-rosa/ccc.nvim",
-    cmd = "CccPick",
-    opts = overrides.ccc,
-  },
+	-- project wide search and replace
+	{
+		"nvim-pack/nvim-spectre",
+		cmd = "Spectre",
+		opts = { open_cmd = "noswapfile vnew" },
+	},
 
-  -- Lazy Git
-  {
-    "kdheepak/lazygit.nvim",
-    cmd = "LazyGit",
-  },
+	-- colors
+	{
+		"uga-rosa/ccc.nvim",
+		cmd = "CccPick",
+		opts = overrides.ccc,
+	},
 
-  -- Scrollbar
-  {
-    "dstein64/nvim-scrollview",
-    event = "BufEnter",
-    lazy = true,
-  },
+	-- Lazy Git
+	{
+		"kdheepak/lazygit.nvim",
+		cmd = "LazyGit",
+	},
 
-  { "hrsh7th/cmp-nvim-lsp-signature-help" },
+	-- Scrollbar
+	{
+		"dstein64/nvim-scrollview",
+		event = "BufEnter",
+		lazy = true,
+	},
 
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require "configs.comment"
-    end,
-    dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-  },
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("configs.comment")
+		end,
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+	},
 
-  {
-    "mattn/emmet-vim",
-    ft = {
-      "html",
-      "css",
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-    },
-    cmd = "Emmet",
-  },
+	{
+		"mattn/emmet-vim",
+		ft = {
+			"html",
+			"css",
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+		},
+		cmd = "Emmet",
+	},
 
-  {
-    "Fymyte/rasi.vim",
-    ft = { "rasi" },
-  },
+	{
+		"Fymyte/rasi.vim",
+		ft = { "rasi" },
+	},
 
-  {
-    "elkowar/yuck.vim",
-    ft = { "yuck" },
-  },
+	{
+		"elkowar/yuck.vim",
+		ft = { "yuck" },
+	},
+
+	-- {
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	ft = { "rust" },
+	-- },
 }

@@ -14,6 +14,7 @@ M.treesitter = {
 		"markdown",
 		"markdown_inline",
 		"python",
+		"rust",
 	},
 	indent = {
 		enable = true,
@@ -28,36 +29,40 @@ M.treesitter = {
 }
 
 M.mason = {
-	ensure_installed = {
-		-- lua stuff
-		"lua-language-server",
-		"stylua",
-
-		-- web dev stuff
-		"css-lsp",
-		"html-lsp",
-		"typescript-language-server",
-		"deno",
-		"prettierd",
-		"eslint-lsp",
-		"tailwindcss-language-server",
-
-		-- c/cpp stuff
-		"clangd",
-		"clang-format",
-
-		-- shell stuff
-		"bash-language-server",
-		"shellcheck",
-		"shfmt",
-
-		-- "hyprlang",
-
-		-- python stuff
-		"pyright",
-		"flake8",
-		"black",
-	},
+	-- ensure_installed = {
+	-- 	-- lua stuff
+	-- 	"lua-language-server",
+	-- 	"stylua",
+	--
+	-- 	-- web dev stuff
+	-- 	"css-lsp",
+	-- 	"html-lsp",
+	-- 	"typescript-language-server",
+	-- 	"deno",
+	-- 	"prettierd",
+	-- 	"eslint-lsp",
+	-- 	"tailwindcss-language-server",
+	--
+	-- 	-- c/cpp stuff
+	-- 	"clangd",
+	-- 	"clang-format",
+	--
+	-- 	-- shell stuff
+	-- 	"bash-language-server",
+	-- 	"shellcheck",
+	-- 	"shfmt",
+	--
+	-- 	-- "hyprlang",
+	--
+	-- 	-- python stuff
+	-- 	"pyright",
+	-- 	"flake8",
+	-- 	"black",
+	--
+	-- 	-- rust stuff
+	-- 	"rust-analyzer",
+	-- 	"codelldb",
+	-- },
 }
 
 -- colorize indent lines
