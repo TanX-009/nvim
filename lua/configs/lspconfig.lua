@@ -10,6 +10,7 @@ local servers = {
 	-- web stuff
 	"eslint",
 	-- "ts_ls",
+	"svelte",
 	"biome",
 
 	"html",
