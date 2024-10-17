@@ -1,36 +1,25 @@
--- This file  needs to have same structure as nvconfig.lua
--- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
-
----@class ChadrcConfig
-local M = {}
+-- This file needs to have same structure as nvconfig.lua
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
+-- Please read that file to know all available options :(
 
 -- Path to overriding theme and highlights files
-local highlights = require("highlights")
-local theme = require("theme")
+local highlights = require "highlights"
 
-M.ui = {
-	changed_themes = {
-		nord = {
-			base_30 = theme.base_30,
-			base_16 = theme.base_16,
-		},
-	},
-	theme = "nord",
-	theme_toggle = { "nord", "one_light" },
+---@type ChadrcConfig
+local M = {
+  base46 = {
+    theme = "matugen",
+    theme_toggle = { "matugen", "one_light" },
 
-	hl_override = highlights.override,
-	hl_add = highlights.add,
-
-	nvdash = require("configs.nvdash"),
-
-	statusline = {
-		theme = "minimal",
-	},
+    hl_override = highlights.override,
+    hl_add = highlights.add,
+  },
+  ui = {
+    statusline = {
+      theme = "minimal",
+    },
+  },
+  nvdash = require "configs.nvdash",
 }
-
-M.plugins = "plugins"
-
--- check core.mappings for table structure
-M.mappings = require("mappings")
 
 return M
