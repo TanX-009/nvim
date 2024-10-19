@@ -30,7 +30,7 @@ local M = {
   load_on_startup = true,
   header = header,
   buttons = {
-    { txt = " Who told you 'bout this place? I'll kill 'em! ", keys = "turd", cmd = ":q" },
+    { txt = " Get Lost!", keys = "gl", cmd = ":q" },
   },
 }
 

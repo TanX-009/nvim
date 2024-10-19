@@ -19,6 +19,9 @@ local M = {
       theme = "minimal",
     },
   },
+  colorify = {
+    mode = "bg",
+  },
   nvdash = require "configs.nvdash",
 }
 
