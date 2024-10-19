@@ -12,17 +12,17 @@ if file then
   file:close() -- Close the file if it was successfully opened
   local colors = dofile(colors_path)
   M.base_30 = {
-    white = colors.onSurface,
-    darker_black = colors.surfaceContainerLowest,
-    black = colors.surfaceContainer, --  nvim bg
+    white = colors.on_surface,
+    darker_black = colors.surface_container_lowest,
+    black = colors.surface_container, --  nvim bg
     black2 = colors.surface,
-    one_bg = colors.surfaceContainer,
-    one_bg2 = colors.surfaceContainerHigh,
-    one_bg3 = colors.surfaceContainerHighest,
+    one_bg = colors.surface_container,
+    one_bg2 = colors.surface_container_high,
+    one_bg3 = colors.surface_container_highest,
     grey = colors.primary,
-    grey_fg = colors.tertiaryContainer,
+    grey_fg = colors.tertiary_container,
     grey_fg2 = colors.outline,
-    light_grey = colors.onSurfaceVariant,
+    light_grey = colors.on_surface_variant,
     red = colors.red,
     baby_pink = colors.magenta,
     pink = colors.deeppink,
@@ -37,9 +37,9 @@ if file then
     teal = colors.mediumaquamarine,
     orange = colors.orange,
     cyan = colors.cyan,
-    line = colors.outlineVariant, -- for lines like vertsplit
-    statusline_bg = colors.surfaceContainerLow,
-    lightbg = colors.surfaceContainer,
+    line = colors.outline_variant, -- for lines like vertsplit
+    statusline_bg = colors.surface_container_low,
+    lightbg = colors.surface_container,
     pmenu_bg = colors.primary,
     folder_bg = colors.secondary,
   }
