@@ -8,13 +8,19 @@ local highlights = require "highlights"
 ---@type ChadrcConfig
 local M = {
   base46 = {
-    theme = "matugen",
-    theme_toggle = { "matugen", "one_light" },
+    theme = "colorinator",
+    theme_toggle = { "colorinator", "one_light" },
 
     hl_override = highlights.override,
     hl_add = highlights.add,
   },
   ui = {
+    cmp = {
+      style = "atom",
+      format_colors = {
+        tailwind = true,
+      },
+    },
     statusline = {
       theme = "minimal",
     },
