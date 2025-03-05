@@ -29,7 +29,7 @@ local servers = {
   html = {},
 
   cssls = {},
-  -- tailwindcss = {},
+  tailwindcss = {},
 
   -- c/cpp stuff
   clangd = {},
@@ -38,7 +38,18 @@ local servers = {
   bashls = {},
 
   -- python
+  ruff = {},
   pyright = {},
+  -- basedpyright = {
+  --   analysis = {
+  --     diagnosticMode = "openFilesOnly",
+  --     inlayHints = {
+  --       callArgumentNames = true,
+  --     },
+  --   },
+  -- },
+  -- pylsp = {},
+  -- jedi_language_server = {},
 
   -- rust
   rust_analyzer = {

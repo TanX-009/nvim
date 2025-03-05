@@ -14,17 +14,20 @@ local options = {
     typescript = { "biome", "prettierd" },
     typescriptreact = { "biome", "prettierd" },
 
-    -- conf stuff
+    -- conf
     json = { "prettierd" },
 
-    -- shell stuff
+    -- shell
     sh = { "shfmt" },
 
-    -- python stuff
+    -- python
     python = { "black" },
 
-    -- rust stuff
+    -- rust
     rust = { "rustfmt" },
+
+    -- markdown
+    markdown = { "prettierd" },
   },
 
   -- adding same formatter for multiple filetypes can look too much work for some

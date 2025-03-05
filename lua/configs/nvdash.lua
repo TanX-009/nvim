@@ -27,10 +27,10 @@ local header = {
 }
 
 local M = {
-  load_on_startup = false,
-  -- header = header,
+  load_on_startup = true,
+  header = header,
   buttons = {
-    { txt = " Get Lost!", keys = "gl", cmd = ":q" },
+    { txt = " ", keys = " ", cmd = "" },
   },
 }
 

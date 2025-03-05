@@ -42,3 +42,19 @@ end, { desc = "Replace in files (Spectre)" })
 
 -- ccc
 map("n", "<leader>pc", "<cmd> CccPick <CR>", { desc = "Pick color" })
+
+-- neck pain
+map("n", "<CS-n>", function()
+  local tree = require "nvim-tree"
+  local tree_api = require "nvim-tree.api"
+  local preset_width = tree.get_config().view.width
+  local width = vim.go.columns * 0.35
+
+  if tree_api.tree.is_visible() then
+    tree_api.tree.close()
+    tree_api.tree.resize { absolute = preset_width }
+  else
+    tree_api.tree.open()
+    tree_api.tree.resize { absolute = width }
+  end
+end, { desc = "Open NVIM Tree to center the buffer to bring it to the center" })

@@ -1,16 +1,26 @@
 local colors_path = (os.getenv "HOME" .. "/.colors/generated/lua/colors.lua")
 
+local color_utils = require "utils.color"
+
 ---@type Base46Table
 local M = {
   add_hl = {},
   polish_hl = {},
-  type = "dark",
 }
 
 local file = io.open(colors_path, "r") -- Try to open the file in read mode
 if file then
   file:close() -- Close the file if it was successfully opened
   local colors = dofile(colors_path)
+
+  local type = "dark"
+  if color_utils.is_bright_hex(colors.surface_container) then
+    type = "light"
+  else
+    type = "dark"
+  end
+  M.type = type
+
   M.base_30 = {
     white = colors.on_surface,
     darker_black = colors.surface_container_lowest,
