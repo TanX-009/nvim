@@ -30,6 +30,10 @@ map("n", "<A-w>", function()
   require("nvchad.tabufline").close_buffer()
 end, { desc = "buffer close" })
 
+-- lsp
+-- restart
+map("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
+
 -- lazygit
 map("n", "<leader>lg", function()
   require("lazygit").lazygit()

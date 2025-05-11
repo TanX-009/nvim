@@ -16,6 +16,7 @@ local options = {
 
     -- conf
     json = { "prettierd" },
+    yaml = { "yamlfmt" },
 
     -- shell
     sh = { "shfmt" },
