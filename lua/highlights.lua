@@ -24,6 +24,8 @@ M.add = {
   IndentBlanklineIndent4 = { fg = "one_bg2" },
   IndentBlanklineIndent5 = { fg = "grey_fg" },
   IndentBlanklineIndent6 = { fg = "one_bg3" },
+
+  SnacksDim = { fg = "one_bg3" },
 }
 
 return M

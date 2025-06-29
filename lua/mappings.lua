@@ -3,6 +3,7 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
+local Snacks = require "snacks"
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
@@ -36,13 +37,21 @@ map("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 
 -- lazygit
 map("n", "<leader>lg", function()
-  require("lazygit").lazygit()
+  Snacks.lazygit()
 end, { desc = "LazyGit" })
 
 -- spectre
 map("n", "<leader>sr", function()
   require("spectre").open()
 end, { desc = "Replace in files (Spectre)" })
+
+-- snacks
+map("n", "<leader>sd", function()
+  Snacks.dim()
+end, { desc = "Snacks dim everything else to focus in context" })
+
+-- avante.nvim
+map("n", "<leader>av", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante panel" })
 
 -- ccc
 map("n", "<leader>pc", "<cmd> CccPick <CR>", { desc = "Pick color" })
