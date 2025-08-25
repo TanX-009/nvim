@@ -10,6 +10,7 @@ local api = vim.api
 
 -- o.cursorlineopt ='both' -- to enable cursorline!
 o.shell = "fish"
+o.relativenumber = true
 
 api.nvim_create_user_command("FormatDisable", function(args)
   if args.bang then

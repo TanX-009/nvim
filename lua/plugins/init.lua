@@ -61,6 +61,19 @@ return {
     enabled = false,
   },
 
+  --git
+  {
+    "sindrets/diffview.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
+    -- keys = {
+    --   { "<leader>gdo", "<cmd>DiffviewOpen<cr>", desc = "Diff Open" },
+    --   { "<leader>gdf", "<cmd>DiffviewFileHistory %<cr>", desc = "File History" },
+    --   { "<leader>gdm", "<cmd>DiffviewOpen master<cr>", desc = "Diff Master" },
+    --   { "<leader>gdM", "<cmd>DiffviewOpen main<cr>", desc = "Diff Main" },
+    -- },
+  },
+
   -- github copilot
   -- {
   --   "zbirenbaum/copilot.lua",
@@ -233,6 +246,7 @@ return {
       "javascriptreact",
       "typescript",
       "typescriptreact",
+      "svelte",
     },
     cmd = "Emmet",
   },
@@ -245,6 +259,14 @@ return {
   {
     "elkowar/yuck.vim",
     ft = { "yuck" },
+  },
+
+  {
+    "razak17/tailwind-fold.nvim",
+    opts = {},
+    enabled = false,
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = { "html", "svelte", "astro", "vue", "typescriptreact", "php", "blade" },
   },
 
   -- { import = "nvchad.blink.lazyspec" },

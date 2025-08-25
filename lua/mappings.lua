@@ -31,9 +31,11 @@ map("n", "<A-w>", function()
   require("nvchad.tabufline").close_buffer()
 end, { desc = "buffer close" })
 
--- lsp
 -- restart
+-- lsp
 map("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
+-- nvim tree
+map("n", "<leader>tr", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })
 
 -- lazygit
 map("n", "<leader>lg", function()
@@ -54,14 +56,14 @@ end, { desc = "Snacks dim everything else to focus in context" })
 map("n", "<leader>av", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante panel" })
 
 -- ccc
-map("n", "<leader>pc", "<cmd> CccPick <CR>", { desc = "Pick color" })
+map("n", "<leader>pc", "<cmd>CccPick<CR>", { desc = "Pick color" })
 
 -- neck pain
 map("n", "<CS-n>", function()
   local tree = require "nvim-tree"
   local tree_api = require "nvim-tree.api"
   local preset_width = tree.get_config().view.width
-  local width = vim.go.columns * 0.35
+  local width = math.floor(vim.go.columns * 0.35 + 0.5)
 
   if tree_api.tree.is_visible() then
     tree_api.tree.close()
@@ -71,3 +73,7 @@ map("n", "<CS-n>", function()
     tree_api.tree.resize { absolute = width }
   end
 end, { desc = "Open NVIM Tree to center the buffer to bring it to the center" })
+
+--git
+--blame
+map("n", "<leader>gb", "<cmd>Gitsigns blame<CR>", { desc = "Open gitsigns blame view" })
