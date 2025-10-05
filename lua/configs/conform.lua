@@ -20,6 +20,7 @@ local options = {
 
     -- shell
     sh = { "shfmt" },
+    fish = { "fish_indent" },
 
     -- python
     python = { "black" },

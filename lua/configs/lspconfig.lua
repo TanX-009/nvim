@@ -36,6 +36,7 @@ local servers = {
 
   -- shell stuff
   bashls = {},
+  fish_lsp = {},
 
   -- python
   ruff = {},
