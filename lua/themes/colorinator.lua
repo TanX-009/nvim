@@ -24,13 +24,13 @@ if file then
   M.base_30 = {
     white = colors.on_surface,
     darker_black = colors.surface_container_lowest,
-    black = colors.surface_container, --  nvim bg
+    black = colors.surface_container_low, --  nvim bg
     black2 = colors.surface,
     one_bg = colors.surface_container,
     one_bg2 = colors.surface_container_high,
     one_bg3 = colors.surface_container_highest,
     grey = colors.primary,
-    grey_fg = colors.tertiary_container,
+    grey_fg = colors.outline_variant,
     grey_fg2 = colors.outline,
     light_grey = colors.on_surface_variant,
     red = colors.red,
