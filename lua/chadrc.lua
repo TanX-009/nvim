@@ -29,6 +29,12 @@ local M = {
     mode = "bg",
   },
   nvdash = require "configs.nvdash",
+
+  term = {
+    float = {
+      border = "none",
+    },
+  },
 }
 
 return M
