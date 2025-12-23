@@ -1,18 +1,18 @@
-local configs = require "nvchad.configs.lspconfig"
-local util = require "lspconfig/util"
+require("nvchad.configs.lspconfig").defaults()
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
   -- web stuff
   eslint = {},
   ts_ls = {
+    filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "typescript.d", "vue" },
     init_options = {
       preferences = {
         disableSuggestions = true,
       },
     },
   },
-  volar = {
+  vue_ls = {
     filetypes = { "vue" },
     init_options = {
       typescript = {
@@ -53,28 +53,17 @@ local servers = {
   -- jedi_language_server = {},
 
   -- rust
-  rust_analyzer = {
-    filetypes = { "rust" },
-    root_dir = util.root_pattern("Cargo.toml", "rust-project.json"),
-    settings = {
-      ["rust-analyzer"] = {
-        cargo = {
-          allFeatures = true,
-        },
-      },
-    },
-  },
+  rust_analyzer = {},
 
   -- java
   jdtls = {},
 
   qmlls = {},
+
+  yamlls = {},
 }
 
 for name, opts in pairs(servers) do
-  opts.on_init = configs.on_init
-  opts.on_attach = configs.on_attach
-  opts.capabilities = configs.capabilities
-
-  require("lspconfig")[name].setup(opts)
+  vim.lsp.config(name, opts)
+  vim.lsp.enable { name }
 end

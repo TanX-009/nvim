@@ -13,6 +13,7 @@ local options = {
     javascriptreact = { "biome", "prettierd" },
     typescript = { "biome", "prettierd" },
     typescriptreact = { "biome", "prettierd" },
+    svg = { "xmlformatter" },
 
     -- conf
     json = { "prettierd" },

@@ -107,7 +107,6 @@ M.copilot = {
     enable = false,
   },
 }
--- copilot integration in nvim-cmp
 M.nvimcmp = {
   sources = {
     { name = "nvim_lsp", group_index = 2 },
@@ -115,7 +114,8 @@ M.nvimcmp = {
     { name = "buffer", group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
-    { name = "copilot", group_index = 2 },
+    -- { name = "copilot", group_index = 2 },
+    -- { name = "cmp_ai" },
   },
 }
 

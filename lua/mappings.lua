@@ -3,7 +3,6 @@ require "nvchad.mappings"
 -- add yours here
 
 local map = vim.keymap.set
-local Snacks = require "snacks"
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
@@ -37,23 +36,10 @@ map("n", "<leader>lr", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 -- nvim tree
 map("n", "<leader>tr", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh NvimTree" })
 
--- lazygit
-map("n", "<leader>lg", function()
-  Snacks.lazygit()
-end, { desc = "LazyGit" })
-
 -- spectre
 map("n", "<leader>sr", function()
   require("spectre").open()
 end, { desc = "Replace in files (Spectre)" })
-
--- snacks
-map("n", "<leader>sd", function()
-  Snacks.dim()
-end, { desc = "Snacks dim everything else to focus in context" })
-
--- avante.nvim
-map("n", "<leader>av", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante panel" })
 
 -- ccc
 map("n", "<leader>pc", "<cmd>CccPick<CR>", { desc = "Pick color" })
@@ -74,6 +60,33 @@ map("n", "<CS-n>", function()
   end
 end, { desc = "Open NVIM Tree to center the buffer to bring it to the center" })
 
---git
---blame
+-- git blame
 map("n", "<leader>gb", "<cmd>Gitsigns blame<CR>", { desc = "Open gitsigns blame view" })
+
+-- TERMINAL
+-- lazygit
+map({ "n", "t" }, "<A-l>", function()
+  require("nvchad.term").toggle {
+    pos = "float",
+    cmd = "lazygit",
+    id = "lazygit",
+    clear_cmd = true,
+    float_opts = {
+      width = 1,
+      height = 1,
+    },
+  }
+end, { desc = "toggle lazygit terminal" })
+-- slumber
+map({ "n", "t" }, "<A-s>", function()
+  require("nvchad.term").toggle {
+    pos = "float",
+    cmd = "slumber",
+    id = "slumber",
+    clear_cmd = true,
+    float_opts = {
+      width = 1,
+      height = 1,
+    },
+  }
+end, { desc = "toggle slumber terminal" })
