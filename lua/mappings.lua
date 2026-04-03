@@ -48,7 +48,12 @@ map("n", "<leader>pc", "<cmd>CccPick<CR>", { desc = "Pick color" })
 map("n", "<CS-n>", function()
   local tree = require "nvim-tree"
   local tree_api = require "nvim-tree.api"
-  local preset_width = tree.get_config().view.width
+  local preset_width
+  if tree.get_config then
+    preset_width = tree.get_config().view.width
+  else
+    preset_width = 30
+  end
   local width = math.floor(vim.go.columns * 0.35 + 0.5)
 
   if tree_api.tree.is_visible() then
