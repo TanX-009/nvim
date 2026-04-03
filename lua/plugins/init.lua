@@ -38,6 +38,13 @@ return {
   },
 
   {
+    "folke/todo-comments.nvim",
+    cmd = { "TodoLocList" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = { { "nvim-treesitter/nvim-treesitter" } },
   },
@@ -190,6 +197,15 @@ return {
   {
     "elkowar/yuck.vim",
     ft = { "yuck" },
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    ft = { "markdown" },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
 
   {

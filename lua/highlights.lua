@@ -34,6 +34,11 @@ M.override = {
   TelescopePromptTitle = { bg = "black2", fg = "folder_bg" },
   TelescopeResultsTitle = { bg = "black2", fg = "folder_bg" },
   TelescopePreviewTitle = { bg = "black2", fg = "folder_bg" },
+
+  -- QuickFix
+  QuickFixLine = {
+    bg = "grey_fg",
+  },
 }
 
 ---@type HLTable

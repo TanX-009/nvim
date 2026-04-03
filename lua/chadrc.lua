@@ -13,6 +13,8 @@ local M = {
 
     hl_override = highlights.override,
     hl_add = highlights.add,
+
+    integrations = { "render-markdown" },
   },
   ui = {
     cmp = {
